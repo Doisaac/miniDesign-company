@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -7,8 +9,7 @@
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
-  font-size: 10px;
-  font-family: serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* CUSTOM PROPERTIES*/
@@ -31,12 +32,14 @@
   width: 100vw;
   height: auto;
   z-index: 2;
-  background-color: var(--blue);
+  animation: blur linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
 
   & .navbar__header {
     min-height: 90px;
 
-    & .navbar {
+    & .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -63,6 +66,7 @@
       overflow-x: hidden;
       transform: translate(100%, 0);
       transition: .5s ease transform;
+      margin-bottom: 0;
 
       &.active {
         transform: translate(0, 0);
@@ -75,13 +79,14 @@
     }
 
     & ul a {
-      font-size: 2.5rem;
+      font-size: 18px;
       font-weight: 500;
       letter-spacing: .2rem;
       color: #fff;
       text-transform: uppercase;
       padding: 20px;
       display: inline-block;
+      text-decoration: none;
 
       &::after {
         content: attr(data-after);
@@ -165,9 +170,29 @@
   }
 }
 
+#carousel-section {
+  & .carousel {
+    & img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    & .carousel-inner {
+      height: 100vh;
+      min-width: 100vw;
+    }
+  }
+
+  & .carousel-indicators.deactive {
+    display: none;
+  }
+}
+
 /* TABLET */
 @media (min-width: 768px) {
-  
+  /*TODO: ADD TABLET DESIGN*/
 }
 
 /* DESKTOP */
@@ -185,7 +210,6 @@
       transition: initial;
 
       & a {
-        font-size: 1.8rem;
 
         &::after {
           display: none;
@@ -196,6 +220,18 @@
     /* HAMBURGER */
     .navbar__hamburger {
       display: none;
+    }
+  }
+
+  #carousel-section {
+    overflow: hidden;
+    & .carousel {
+      & img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        aspect-ratio: none
+      }
     }
   }
 }
@@ -210,5 +246,15 @@
   100% {
     opacity: 0;
     transform: scale(1.3);
+  }
+}
+
+@keyframes blur {
+  to {
+    box-shadow: 
+    0px 5px 50px -5px hsl(0, 0, 0, 0.1)
+    0px 5px 0px 1px hsl(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0 / .3);
+    backdrop-filter: blur(10px);
   }
 }
