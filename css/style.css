@@ -225,6 +225,11 @@
 
   #carousel-section {
     overflow: hidden;
+
+    & .carousel-indicators.deactive {
+      display: flex;
+    }
+
     & .carousel {
       & img {
         width: 100%;
