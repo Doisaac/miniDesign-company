@@ -16,6 +16,7 @@
 :root {
   --blue: #000527;
   --white: #fff;
+  --bento-shadow: #7886ff;
 }
 
 /* NAVBAR SECTION */
@@ -248,6 +249,110 @@
   }
 }
 
+#bentos {
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom,#0e1435 0%, #000527 15%, #1682c7 156%);
+
+  & .bentos__container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 30rem;
+    gap: 35px;
+
+    & article {
+      position: relative;
+      font-size: 15px;
+      box-shadow: 0 0 20px 0px var(--bento-shadow);
+      border-radius: 15px;
+      overflow: hidden;
+
+      & .bentos__image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/images/bento-house.webp);
+        background-position: center;
+        background-size: cover;
+        transition: scale 1s ease-in-out;
+        z-index: 0;
+      }
+
+      & .bentos__gradient {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, 0.5) 40%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        z-index: 1;
+      }
+
+      & .bentos__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        width: 100%;
+        padding: 6px;
+        z-index: 2;
+        color: #fff;
+        padding: 20px;
+
+        &:hover + .bentos__image {
+          scale: 1.2;
+        }
+
+        & h2 {
+          font-weight: bold;
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+
+        & h3 {
+          font-weight: 600;
+          color: rgba(167, 187, 212, 8);
+        }
+      }
+    }
+
+    & article:nth-child(1) {
+      grid-column: span 10;
+    }
+
+    & article:nth-child(2) {
+      grid-column: span 10;
+      & .bentos__image {
+        background-image: url(/images/bento-hotel.webp);
+      }
+    }
+    & article:nth-child(3) {
+      grid-column: span 10;
+      & .bentos__image {
+        background-image: url(/images/bento-restaurant.webp);
+      }
+    }
+    & article:nth-child(4) {
+      grid-column: span 10;
+      & .bentos__image {
+        background-image: url(/images/bento-office.webp);
+      }
+    }
+  }
+}
+
 /* TABLET */
 @media (min-width: 768px) {
   /*TODO: ADD NAVBAR TABLET DESIGN IF NEEDED*/
@@ -256,9 +361,32 @@
   #summary-section {
     min-height: 66vh;
     padding: 100px 0;
-    
+
     & .summary__container {
       padding: 0;
+    }
+  }
+
+  /* BENTO DESIGN */
+  #bentos {
+    & .bentos__container {
+      gap: 30px;
+      width: 90vw;
+      padding-top: 100px;
+  
+      & article:nth-child(1) {
+        grid-column: span 4;
+      }
+  
+      & article:nth-child(2) {
+        grid-column: span 6;
+      }
+      & article:nth-child(3) {
+        grid-column: span 6;
+      }
+      & article:nth-child(4) {
+        grid-column: span 4;
+      }
     }
   }
 }
@@ -317,6 +445,15 @@
     & .summary__container {
       padding: 0;
       width: 42.3vw;
+      max-width: 1300px;
+    }
+  }
+
+  /* BENTO DESIGN */
+  /* BENTO DESIGN */
+  #bentos {
+    & .bentos__container {
+      gap: 30px;
       max-width: 1300px;
     }
   }
