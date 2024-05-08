@@ -32,7 +32,7 @@
   left: 0;
   width: 100vw;
   height: auto;
-  z-index: 2;
+  z-index: 3;
   animation: blur linear both;
   animation-timeline: scroll();
   animation-range: 0 500px;
