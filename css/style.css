@@ -71,6 +71,7 @@
 
       &.active {
         transform: translate(0, 0);
+        padding: 0;
       }
     }
 
