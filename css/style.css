@@ -17,6 +17,7 @@
   --blue: #000527;
   --white: #fff;
   --bento-shadow: #7886ff;
+  --footer: #090a16;
 }
 
 /* NAVBAR SECTION */
@@ -350,6 +351,26 @@
       & .bentos__image {
         background-image: url(/images/bento-office.webp);
       }
+    }
+  }
+}
+
+#footer {
+  background-color: var(--footer);
+
+  & .footer_heading {
+    font-weight: 600;
+  }
+
+  & .footer__col {
+    gap: 15px;
+
+    & a {
+      transition: color .5s ease-in-out;
+    }
+
+    & a:hover {
+      color: var(--white) !important;
     }
   }
 }
