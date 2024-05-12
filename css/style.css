@@ -528,11 +528,23 @@
   }
 
   /* BENTO DESIGN */
-  /* BENTO DESIGN */
   #bentos {
     & .bentos__container {
       gap: 30px;
       max-width: 1300px;
+    }
+  }
+
+  /* EQUIPO */
+  #equipo {
+    & .equipo__container {
+      flex-wrap: nowrap;
+    }
+
+    & .equipo__container {
+      & .equipo__item {
+        flex-basis: unset;
+      }
     }
   }
 }
