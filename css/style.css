@@ -458,6 +458,15 @@
       }
     }
   }
+
+  /* EQUIPO */
+  #equipo {
+    & .equipo__container {
+      & .equipo__item {
+        flex-basis: 45%;
+      }
+    }
+  }
 }
 
 /* DESKTOP */
