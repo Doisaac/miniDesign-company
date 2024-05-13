@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 *,
 *::before,
@@ -67,7 +67,7 @@
       align-items: center;
       overflow-x: hidden;
       transform: translate(100%, 0);
-      transition: .5s ease transform;
+      transition: 0.5s ease transform;
       margin-bottom: 0;
 
       &.active {
@@ -84,7 +84,7 @@
     & ul a {
       font-size: 18px;
       font-weight: 500;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       color: #fff;
       text-transform: uppercase;
       padding: 20px;
@@ -100,7 +100,7 @@
         transform: translate(-50%, -50%) scale(0);
         font-size: 13rem;
         color: rgb(240, 248, 255, 0.021);
-        transition: .4s ease letter-spacing;
+        transition: 0.4s ease letter-spacing;
         z-index: -1;
       }
     }
@@ -120,7 +120,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(.8);
+    transform: scale(0.8);
     margin-right: 20px;
 
     &.active .navbar__bar::before {
@@ -142,13 +142,13 @@
 
   .navbar__bar::after,
   .navbar__bar::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     background-color: #fff;
-    transition: .3s ease;
+    transition: 0.3s ease;
     transition-property: top, bottom;
   }
 
@@ -163,7 +163,7 @@
   /* HAMBURGER EFFECT */
   & .navbar__hamburger::after {
     z-index: 6;
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -211,14 +211,14 @@
   text-align: center;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background-image: url(/images/home-bg-1.png);
     background-size: 100vw calc(100% + 180px);
     background-position: 0 -171px;
     background-repeat: no-repeat;
-    opacity: .5;
+    opacity: 0.5;
   }
 
   & .summary__container {
@@ -257,7 +257,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom,#0e1435 0%, #000527 15%, #1682c7 156%);
+  background: linear-gradient(to bottom, #0e1435 0%, #000527 15%, #1682c7 156%);
 
   & .bentos__container {
     width: 100vw;
@@ -366,7 +366,7 @@
     gap: 15px;
 
     & a {
-      transition: color .5s ease-in-out;
+      transition: color 0.5s ease-in-out;
     }
 
     & a:hover {
@@ -442,11 +442,11 @@
       gap: 30px;
       width: 90vw;
       padding-top: 100px;
-  
+
       & article:nth-child(1) {
         grid-column: span 4;
       }
-  
+
       & article:nth-child(2) {
         grid-column: span 6;
       }
@@ -514,7 +514,7 @@
   /* SUMMARY ABOUT US */
   #summary-section {
     min-height: 100vh;
-    
+
     &::before {
       background-size: 100vw calc(100% + 400px);
       background-position: 0 -314px;
@@ -565,7 +565,7 @@
 @keyframes blur {
   to {
     box-shadow: 0px 5px 50px -5px hsl(0, 0, 0, 0.1) 0px 5px 0px 1px hsl(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0 / .3);
+    background-color: rgba(0, 0, 0 / 0.3);
     backdrop-filter: blur(10px);
   }
 }
@@ -577,4 +577,10 @@
   100% {
     opacity: 1;
   }
+}
+
+/* DISPLAY */
+
+.center {
+  text-align: center;
 }
