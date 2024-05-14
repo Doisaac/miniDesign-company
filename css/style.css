@@ -226,7 +226,8 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 80vw; /* ADD DESKTOP */
+    width: 80vw;
+    /* ADD DESKTOP */
     max-width: 1300px;
     text-align: center;
 
@@ -238,6 +239,53 @@
     }
 
     & .summary__text {
+      text-align: left;
+
+      & p:first-child {
+        margin-bottom: 2.5rem;
+      }
+
+      & strong {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* WE ARE SECTION */
+#we_are-section {
+  position: relative;
+  min-height: 90vh;
+  max-width: 100vw;
+  font-size: 20px;
+  color: var(--white);
+  line-height: 1.4;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+  text-align: center;
+
+  & .we_are__container {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 80vw;
+    /* ADD DESKTOP */
+    max-width: 1300px;
+    text-align: center;
+    margin-top: 75px;
+
+    & h1 {
+      display: block;
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.22;
+    }
+
+    & .we_are__text {
       text-align: left;
 
       & p:first-child {
@@ -292,12 +340,10 @@
         bottom: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          to bottom,
-          transparent 0%,
-          rgba(0, 0, 0, 0.5) 40%,
-          rgba(0, 0, 0, 0.8) 100%
-        );
+        background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.5) 40%,
+            rgba(0, 0, 0, 0.8) 100%);
         z-index: 1;
       }
 
@@ -313,7 +359,7 @@
         color: #fff;
         padding: 20px;
 
-        &:hover + .bentos__image {
+        &:hover+.bentos__image {
           scale: 1.2;
         }
 
@@ -336,18 +382,23 @@
 
     & article:nth-child(2) {
       grid-column: span 10;
+
       & .bentos__image {
         background-image: url(/images/bento-hotel.webp);
       }
     }
+
     & article:nth-child(3) {
       grid-column: span 10;
+
       & .bentos__image {
         background-image: url(/images/bento-restaurant.webp);
       }
     }
+
     & article:nth-child(4) {
       grid-column: span 10;
+
       & .bentos__image {
         background-image: url(/images/bento-office.webp);
       }
@@ -450,12 +501,24 @@
       & article:nth-child(2) {
         grid-column: span 6;
       }
+
       & article:nth-child(3) {
         grid-column: span 6;
       }
+
       & article:nth-child(4) {
         grid-column: span 4;
       }
+    }
+  }
+
+  /* WE ARE SECTION */
+  #we_are-section {
+    min-height: 66vh;
+    padding: 100px 0;
+
+    & .we_are__container {
+      padding: 0;
     }
   }
 
@@ -547,7 +610,25 @@
       }
     }
   }
+
+  /* WE ARE SECTION */
+  #we_are-section {
+    min-height: 100vh;
+
+    &::before {
+      background-size: 100vw calc(100% + 400px);
+      background-position: 0 -314px;
+    }
+
+    & .we_are__container {
+      padding: 0;
+      width: 60vw;
+      max-width: 1300px;
+    }
+  }
 }
+
+
 
 /* KEYFRAMES */
 @keyframes pulse {
@@ -574,6 +655,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
