@@ -609,11 +609,6 @@
   #we_are-section {
     min-height: 100vh;
 
-    &::before {
-      background-size: 100vw calc(100% + 400px);
-      background-position: 0 -314px;
-    }
-
     & .we_are__container {
       padding: 0;
       width: 60vw;
