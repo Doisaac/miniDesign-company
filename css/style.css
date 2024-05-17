@@ -253,6 +253,7 @@
 
   /* ABOUT US*/
   & .summary__container_contact {
+    z-index: 2;
     width: 90vw;
     display: flex;
     justify-content: center;
