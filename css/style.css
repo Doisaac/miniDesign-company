@@ -486,10 +486,10 @@
 .rectangular-text a {
   color: rgb(255, 255, 255); 
   text-decoration: none; 
+  transition: color 0.2s ease-in-out;
 }
 .rectangular-text a:hover {
   color: rgb(104, 183, 248); 
-  text-decoration: underline; 
 }
 /* TABLET */
 @media (min-width: 768px) {
@@ -708,6 +708,12 @@ textarea {
   color: white;
   box-shadow: 7px 13px 37px #0e1435;
   border: 1px solid #fff;
+
+  & input:hover, 
+    textarea:hover,
+    input:focus {
+    box-shadow: 0 0 20px #fff8;
+  }
 }
 
 .form h4 {
@@ -760,6 +766,12 @@ textarea {
     flex-wrap: wrap;
     gap: 16px;
     justify-content: space-around;
+  }
+
+  & a {
+    &:hover {
+      filter: drop-shadow(0 0 10px #fff8);
+    }
   }
 }
 
