@@ -716,15 +716,15 @@ textarea {
 }
 
 .controls {
-width: 100%;
-background: #090a16;
-padding: 10px;
-border-radius: 4px;
-margin-bottom: 16px;
-border: 1px solid #fff;
-font-family: 'Calibri';
-font-size: 18px;
-color: white;
+  width: 100%;
+  background: #090a16;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #fff;
+  font-family: 'Calibri';
+  font-size: 18px;
+  color: white;
 }
 
 .controls::placeholder {
@@ -732,14 +732,14 @@ color: white;
 }
 
 .form .boton {
-width: 100%;
-background: #090a16;
-border: none;
-border: 1px solid #fff;
-padding: 12px;
-color: white;
-margin: 16px 0;
-font-size: 20px;
+  width: 100%;
+  background: #090a16;
+  border: none;
+  border: 1px solid #fff;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 20px;
 }
 
 
