@@ -482,7 +482,15 @@
     }
   }
 }
-
+/* links emails members of the group: contact*/
+.rectangular-text a {
+  color: rgb(255, 255, 255); 
+  text-decoration: none; 
+}
+.rectangular-text a:hover {
+  color: rgb(104, 183, 248); 
+  text-decoration: underline; 
+}
 /* TABLET */
 @media (min-width: 768px) {
   /*TODO: ADD NAVBAR TABLET DESIGN IF NEEDED*/
