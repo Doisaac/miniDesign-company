@@ -29,3 +29,45 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     s1.setAttribute('crossorigin', '*');
     s0.parentNode.insertBefore(s1, s0);
 })();
+
+/* Clientes */
+    const imageList = document.getElementById('image-list');
+    const mainImage = document.querySelectorAll('.main-image');
+    const descriptions = document.querySelectorAll('.description');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        currentIndex = index;
+        updateImage();
+    }
+
+    function updateImage() {
+        imageList.style.transform = `translateX(-${currentIndex * 100}%)`;
+        for (let i = 0; i < mainImage.length; i++) {
+            mainImage[i].style.opacity = 0;
+            descriptions[i].classList.remove('active-description');
+        }
+        mainImage[currentIndex].style.opacity = 1;
+        descriptions[currentIndex].classList.add('active-description');
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % mainImage.length;
+        updateImage();
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + mainImage.length) % mainImage.length;
+        updateImage();
+    }
+
+    function showDescription(text) {
+        descriptions[currentIndex].textContent = text;
+        descriptions[currentIndex].classList.add('active-description');
+    }
+
+    function hideDescription() {
+        descriptions[currentIndex].classList.remove('active-description');
+    }
+
+    setInterval(nextImage, 7000); // Cambia de imagen cada 7 segundos
