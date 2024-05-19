@@ -209,6 +209,7 @@
   align-items: center;
   background-color: var(--blue);
   text-align: center;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -247,6 +248,19 @@
       & strong {
         font-weight: bold;
       }
+    }
+  }
+
+  /* ABOUT US*/
+  & .summary__container_contact {
+    z-index: 2;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .summary__text {
+      width: 100%;
     }
   }
 }
@@ -468,7 +482,15 @@
     }
   }
 }
-
+/* links emails members of the group: contact*/
+.rectangular-text a {
+  color: rgb(255, 255, 255); 
+  text-decoration: none; 
+  transition: color 0.2s ease-in-out;
+}
+.rectangular-text a:hover {
+  color: rgb(104, 183, 248); 
+}
 /* TABLET */
 @media (min-width: 768px) {
   /*TODO: ADD NAVBAR TABLET DESIGN IF NEEDED*/
@@ -582,6 +604,13 @@
       width: 42.3vw;
       max-width: 1300px;
     }
+
+    & .summary__container_contact {
+      padding: 0;
+      width: 42.3vw;
+      max-width: 1300px;
+      z-index: 2;
+    }
   }
 
   /* BENTO DESIGN */
@@ -652,7 +681,6 @@
 .center {
   text-align: center;
 }
-
 
 /* Clientes */
     .body-clients {
@@ -740,3 +768,115 @@
             height: 60px;
         }
     }
+
+/* CONTAC PAGE  XD */
+.texto-derecha {
+  text-align: left;
+}
+
+.texto-centro {
+  text-align: center;
+}
+
+textarea {
+  width: 300px;
+  height: 150px;
+}
+
+.form {
+  width: auto;
+  background: #090a16;
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 25px;
+  font-family: 'Calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #0e1435;
+  border: 1px solid #fff;
+
+  & input:hover, 
+    textarea:hover,
+    input:focus {
+    box-shadow: 0 0 20px #fff8;
+  }
+}
+
+.form h4 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #090a16;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #fff;
+  font-family: 'Calibri';
+  font-size: 18px;
+  color: white;
+}
+
+.controls::placeholder {
+  color: white;
+}
+
+.form .boton {
+  width: 100%;
+  background: #090a16;
+  border: none;
+  border: 1px solid #fff;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 20px;
+}
+
+
+.contenedor_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0 auto; 
+  background-color: #090a16; 
+  padding: 25px; 
+  border: 1px solid #fff; 
+  border-radius: 25px; 
+  margin-bottom: 25px;
+
+  & section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-around;
+  }
+
+  & a {
+    &:hover {
+      filter: drop-shadow(0 0 10px #fff8);
+    }
+  }
+}
+
+.contenedor_contact section {
+  display: flex; 
+  justify-content: space-evenly; 
+}
+
+.texto-centro {
+  text-align: center; 
+}
+
+.rectangular-text {
+  border: 1px solid #fff; 
+  border-radius: 25px;
+  padding: 10px; 
+  width: 80%; 
+  margin: 50px auto;
+  background-color: #090a16;
+}
+
