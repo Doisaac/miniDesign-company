@@ -676,12 +676,6 @@
   }
 }
 
-/* DISPLAY */
-
-.center {
-  text-align: center;
-}
-
 /* Clientes */
 .body-clients {
   margin: 0;
@@ -691,20 +685,42 @@
   /* Evita el desplazamiento horizontal */
 }
 
+.clientes__text {
+  width: 60vw !important;
+}
+
 .logo-bar {
-  padding: 5px;
+  padding: 50px 20px;
   background-color: rgb(26, 29, 78);
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
-  /* Permitir el ajuste automático de los logos */
   gap: 20px;
-  /* Espacio entre los logos */
 }
 
 .logo-des {
+  width: 60vw;
+  max-width: 1300px;
+  text-align: center;
   color: aliceblue;
   font-size: 20px;
+}
+
+.logo-title {
+  display: block;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+.logo-images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -782,7 +798,7 @@
   }
 }
 
-/* CONTAC PAGE  XD */
+/* CONTACT PAGE  XD */
 .texto-derecha {
   text-align: left;
 }
