@@ -491,6 +491,127 @@
 .rectangular-text a:hover {
   color: rgb(104, 183, 248); 
 }
+
+/* CLIENTS REVIEW */
+.clients-rev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+  & .clients-main {
+    display:flex;
+    flex-direction:column;
+    width: 100%;   
+    height: 100%;
+
+    & .clients-column {
+      width: 100%;
+      height: 200px;
+      transition: height 0.5s;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+    }
+
+    & .clients-column:nth-child(1) {
+      background-image: url(/images/clientes/starbuck.jpg);
+      background-size:cover;
+      background-position:center center;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    & .clients-column:nth-child(2) {
+      background-image: url(/images/clientes/googleoff.webp);
+      background-size:cover;
+      background-position:bottom center; 
+    }
+
+    & .clients-column:nth-child(3) {
+      background-image: url(/images/clientes/microsoftoff.webp);
+      background-size:cover;
+      background-position:center center;
+      
+    }
+    
+    & .clients-column:nth-child(4) {
+      background-image: url(/images/clientes/cadejo.jpg);
+      background-size:cover;
+      background-position:center center;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    & .clients-column:nth-child(5) {
+      background-image: url(/images/clientes/dell.jpg);
+      background-size:cover;
+      background-position:center center;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    & .clients-column:nth-child(6) {
+      background-image: url(/images/clientes/hp.jpg);
+      background-size:cover;
+      background-position:center center;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    & .clients-expanded:after {
+      content: '';
+      background: rgba(0,0,0,0.7);
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      pointer-events:none;
+    }
+
+    & .clients-expanded{
+      height: 500px;         
+    }
+
+    .inner-element {
+      opacity: 0;
+      transition: opacity 0s;
+      z-index: 2;
+      padding:20px;
+      background:transparent;
+      position:absolute;
+      left:0;
+      bottom:100px;
+          
+      & h2 {
+        font-size: 32px;
+      }
+
+      & p {
+        font-size: 20px;
+      }
+
+      &.e-active {     
+        opacity: 1; 
+        transition: opacity 0.5s 0.4s;        
+       }
+    }
+
+    & .client-icons {
+      position:absolute;
+      bottom: 0;
+      left:18px;
+      padding: 10px;
+      z-index:2;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+  } 
+}
+
 /* TABLET */
 @media (min-width: 768px) {
   /*TODO: ADD NAVBAR TABLET DESIGN IF NEEDED*/
@@ -644,6 +765,67 @@
       max-width: 1300px;
     }
   }
+
+  /* CLIENTS REVIEW */
+    .clients-rev {
+
+      & .clients-main {
+        display: flex;
+        flex-direction: row;
+        width: 1400px;
+        height: 600px;
+  
+        & .clients-column {
+          width: 25%;
+          height: 100%;
+          transition: width 0.5s;
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          cursor: pointer;
+        }
+  
+        & .clients-expanded:after {
+          content: '';
+          background: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 0;
+          pointer-events: none;
+        }
+  
+        & .clients-expanded {
+          width: 150%;
+        }
+  
+        .inner-element {
+          & h2 {
+            text-align: left;
+          }
+  
+          & p {
+            text-align: left;
+          }
+        }
+  
+        & .client-icons {
+          position: absolute;
+          bottom: 0;
+          left: 18px;
+          padding: 10px;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+  
+      }
+    }
 }
 
 /* KEYFRAMES */
@@ -676,13 +858,66 @@
   }
 }
 
-/* DISPLAY */
-
-.center {
-  text-align: center;
+/* Clientes */
+.body-clients {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(26, 29, 78, 0.3);
+  overflow-x: hidden;
+  /* Evita el desplazamiento horizontal */
 }
 
-/* CONTAC PAGE  XD */
+.clientes__text {
+  width: 60vw !important;
+}
+
+.logo-bar {
+  padding: 50px 20px;
+  background-color: rgb(26, 29, 78);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-des {
+  width: 60vw;
+  max-width: 1300px;
+  text-align: center;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.logo-title {
+  display: block;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+.logo-images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: auto;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin: 10px 10px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* CONTACT PAGE  XD */
 .texto-derecha {
   text-align: left;
 }

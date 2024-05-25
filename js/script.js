@@ -29,3 +29,27 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     s1.setAttribute('crossorigin', '*');
     s0.parentNode.insertBefore(s1, s0);
 })();
+
+/* CLIENTS */
+const columns = document.querySelectorAll('.clients-column');
+const innerElements = document.querySelectorAll('.inner-element');
+
+columns.forEach(click => {
+  click.addEventListener('click', event => {
+    columns.forEach(column => {
+      if (column === click) {
+        column.classList.add('clients-expanded');
+      } else {
+        column.classList.remove('clients-expanded');
+      }
+    });
+
+    innerElements.forEach(innerElement => {
+      if (innerElement.parentElement === click) {
+        innerElement.classList.add('e-active');
+      } else {
+        innerElement.classList.remove('e-active');
+      }
+    });
+  });
+});
