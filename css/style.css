@@ -18,6 +18,24 @@
   --white: #fff;
   --bento-shadow: #7886ff;
   --footer: #090a16;
+
+  /* FAQ Colors */
+  --main-color: #0f2646;
+  --color-primary: var(--white);
+  --color-text: var(--white);
+  --color-title: var(--white);
+  --color-border: #dae1f5;
+
+  /* FAQ Fonts & Transitions */
+  --font-family: "Montserrat", sans-serif;
+  --fs-sm: 1.4rem;
+  --fs-md: 1.6rem;
+  --fs-lg: 2.2rem;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --transition: 0.4s ease-in-out;
+  --shadow: 0 0 20px 0px var(--bento-shadow);
 }
 
 /* NAVBAR SECTION */
@@ -316,6 +334,7 @@
   padding: 30px;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #0e1435 0%, #000527 15%, #1682c7 156%);
@@ -674,6 +693,100 @@
       }
     }
   }
+}
+
+.FAQ-container{ 
+  width: 100%;
+  margin: auto;
+  min-height: 100vh;
+  padding: 120px 0;
+  display: grid;
+  place-items: center;
+}
+
+.accordion__wrapper {
+  background-color: var(--main-color);
+  box-shadow: var(--shadow);
+  border-radius: 2.5rem;
+  width: 100%;
+  max-width: 60rem;
+  padding: 5rem;
+}
+
+.accordion__title{
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-title);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.accordion {
+  border-bottom: 0.1rem solid var(--color-border);
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+} 
+
+.accordion__icon {
+  background-color: var(--color-primary);
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+
+  & .accorddion-ic {
+    position: relative;
+    transform: rotate(90deg);
+    background-color: var(--main-color);
+    width: 2.4px;
+    height: 18px;
+    border-radius: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      transform: rotate(90deg);
+      background-color: var(--main-color);
+      width: 2.4px;
+      height: 18px;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &.rotate-effect .accorddion-ic::before {
+    transform: rotate(0deg);
+  }
+
+}
+
+.accordion__question{
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  color: var(--color-title);
+}
+
+.accordion__answer{
+  padding: 2rem 0;
+  color: var(--white)
+}
+
+.accordion__content{
+  overflow: hidden;
+  height: 0;
+  transition: var(--transition);
 }
 
 /* DESKTOP */
