@@ -47,19 +47,113 @@
     
       <article class="summary__text">
         <section class="form">
-          <form action="https://formsubmit.co/0dcbdcaea87c76736591b75e047ef4ef" method="POST" />
-          <h4 class="texto-centro">CONTACTANOS</h4>
-          <input class="controls" type="text" name="Nombre" id="Nombre" placeholder="Nombre:"> <br> <br>
-          <input class="controls" type="email" name="email" id="email" placeholder="Correo Electronico:"> <br> <br>
-          <textarea class="controls" type="text" name="Mensaje" id="Mensaje" placeholder="Mensaje: "></textarea> <br> <br>
-          <input class="boton"    type="submit" value="ENVIAR"> 
-          <input type="hidden" name="_captcha" value="false">
-
-         <!-- <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html" Cambiar el valor a la dirección correcta -->
-        </form>
-        </section>
-
-        
+          <h4>CONTÁCTANOS</h4>
+          <form id="contactForm" action="https://formspree.io/f/mpzvejvl" method="POST" onsubmit="return enviarFormulario()">
+              <input class="controls" type="text" name="Nombre" id="Nombre" placeholder="Nombre:"> <br> <br>
+              <input class="controls" type="email" name="email" id="email" placeholder="Correo Electronico:"> <br> <br>
+              <textarea class="controls" type="text" name="Mensaje" id="Mensaje" placeholder="Mensaje: "></textarea> <br> <br>
+              <input class="boton" type="submit" value="ENVIAR"> 
+          </form>
+      </section>
+      
+      <div id="myModal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="cerrarModal()">&times;</span>
+              <br><p>Por favor rellena todos los campos.</p>
+          </div>
+      </div>
+      
+      <div id="loadingModal" class="modal">
+          <div class="modal-content">
+              <div class="loader"></div>
+              <br><p>Enviando...</p>
+          </div>
+      </div>
+      
+      <div id="confirmacionModal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="cerrarModal()">&times;</span>
+              <div class="icon-container">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-envelope-check" viewBox="0 0 16 16">
+                      <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+                      <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686"/>
+                  </svg>
+              </div>
+              <br>
+              <p id="exitoMensaje">Agradecemos tu mensaje.<br>Pronto te contactaremos.</p>
+          </div>
+      </div>
+      
+      <script>
+          function validarFormulario() {
+              var nombre = document.getElementById("Nombre").value.trim();
+              var email = document.getElementById("email").value.trim();
+              var mensaje = document.getElementById("Mensaje").value.trim();
+      
+              if (nombre === "" || email === "" || mensaje === "") {
+                  mostrarModal("Por favor, completa todos los campos.");
+                  return false;
+              }
+      
+              return true;
+          }
+      
+          function mostrarModal(mensaje) {
+              var modal = document.getElementById("myModal");
+              var mensajeError = modal.querySelector("p");
+              mensajeError.textContent = mensaje;
+              modal.style.display = "block";
+          }
+      
+          function cerrarModal() {
+              var modal = document.getElementById("myModal");
+              modal.style.display = "none";
+          }
+      
+          function mostrarExito() {
+              var confirmacionModal = document.getElementById("confirmacionModal");
+              confirmacionModal.style.display = "block";
+          }
+      
+          function enviarFormulario() {
+              var valido = validarFormulario();
+              if (valido) {
+                  // Mostrar modal de spinner de carga
+                  var spinnerModal = document.getElementById("loadingModal");
+                  spinnerModal.style.display = "block";
+      
+                  var formulario = document.getElementById("contactForm");
+                  var datos = new FormData(formulario);
+      
+                  fetch(formulario.action, {
+                      method: formulario.method,
+                      body: datos
+                  })
+                  .then(response => {
+                      if (!response.ok) {
+                          throw new Error('Error al enviar el formulario.');
+                      }
+                      return response.text();
+                  })
+                  .then(data => {
+                      spinnerModal.style.display = "none";
+   
+                      
+                  })
+                  .catch(error => {
+                      spinnerModal.style.display = "none"; //El verdadero no le muevas si funciona XD
+      
+                      mostrarExito();  //Se muestra mensaje de confirmación
+                       formulario.reset();
+                       setTimeout(() => {
+                       window.location.href = "http://127.0.0.1:5500/index.html"; 
+                       }, 2000); //Tiempo en que redirige a la página principal, 2segundos
+                  });
+              }
+              return false;
+          }
+      </script>
 
         <br><h3 class="texto-centro">REDES SOCIALES</h3>
         <section class="contenedor_contact">
@@ -90,9 +184,9 @@
                   <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                 </svg>
               </a>
-            
           </section>
       </section>
+
       <div class="rectangular-text">
         ND22002 - <a href="mailto:ND22002@ues.edu.sv">ND22002@ues.edu.sv</a><br>
         MF22036 - <a href="mailto:MF22036@ues.edu.sv">MF22036@ues.edu.sv</a><br>
