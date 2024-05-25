@@ -494,10 +494,17 @@
 
 /* CLIENTS REVIEW */
 .clients-rev {
+  min-height: 90vh;
+  max-width: 100vw;
+  font-size: 20px;
+  color: var(--white);
+  line-height: 1.4;
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  background-color: var(--blue);
+  overflow: hidden;
+  padding: 100px 0;
 
   & .clients-main {
     display:flex;
