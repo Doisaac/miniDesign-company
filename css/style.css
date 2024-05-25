@@ -710,11 +710,11 @@
   border-radius: 2.5rem;
   width: 100%;
   max-width: 60rem;
-  padding: 5rem;
+  padding: 20px;
 }
 
 .accordion__title{
-  font-size: var(--fs-lg);
+  font-size: var(--fs-md);
   font-weight: var(--fw-bold);
   color: var(--color-title);
   text-align: center;
@@ -773,7 +773,7 @@
 }
 
 .accordion__question{
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
   color: var(--color-title);
 }
@@ -944,8 +944,20 @@
           justify-content: center;
           align-items: center;
         }
-  
       }
+    }
+
+    /* FAQS */
+    .accordion__wrapper {
+      padding: 5rem;
+    }
+
+    .accordion__title{
+      font-size: var(--fs-lg);
+    }
+
+    .accordion__question{
+      font-size: var(--fs-md);
     }
 }
 
