@@ -544,6 +544,20 @@
       border-radius: 0px 0px 10px 10px;
     }
 
+    & .clients-column:nth-child(5) {
+      background-image: url(/images/clientes/dell.jpg);
+      background-size:cover;
+      background-position:center center;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    & .clients-column:nth-child(6) {
+      background-image: url(/images/clientes/hp.jpg);
+      background-size:cover;
+      background-position:center center;
+      border-radius: 0px 0px 10px 10px;
+    }
+
     & .clients-expanded:after {
       content: '';
       background: rgba(0,0,0,0.7);
