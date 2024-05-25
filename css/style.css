@@ -30,7 +30,7 @@
   --font-family: "Montserrat", sans-serif;
   --fs-sm: 1.4rem;
   --fs-md: 1.6rem;
-  --fs-lg: 2.2rem;
+  --fs-lg: 2.1rem;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
@@ -340,7 +340,7 @@
   background: linear-gradient(to bottom, #0e1435 0%, #000527 15%, #1682c7 156%);
 
   & .bentos__container {
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-auto-rows: 30rem;
