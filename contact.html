@@ -10,7 +10,8 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!--CSS-->
   <link rel="stylesheet" href="css/style.css">
-
+  <!--Fav-icon-->
+  <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 
 <body>
@@ -149,12 +150,12 @@
 
                 })
                 .catch(error => {
-                  spinnerModal.style.display = "none"; //El verdadero no le muevas si funciona XD
+                  spinnerModal.style.display = "none"; 
 
                   mostrarExito();  //Se muestra mensaje de confirmación
                   formulario.reset();
                   setTimeout(() => {
-                    window.location.href = "http://127.0.0.1:5500/index.html";
+                    window.location.href = "https://doisaac.github.io/miniDesign-company/index.html";
                   }, 2000); //Tiempo en que redirige a la página principal, 2segundos
                 });
             }
