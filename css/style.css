@@ -1378,6 +1378,19 @@ textarea {
       -moz-transform-origin: center;
 }
 
+.fadeEffect {
+  opacity: 0;
+  animation: 1.5s ease fadeEffect forwards;
+}
+
+.revealEffect{
+  opacity: 0;
+  animation: reveal linear forwards;
+  animation-timeline: view();
+  animation-range: entry 10% cover 20%;
+  transition: all 0.5s ease-in-out ;
+}
+
   @keyframes jello {
       from,11.1%,to {transform: translate3d(0, 0, 0);}
       22.2% {transform: skewX(-12.5deg) skewY(-12.5deg);}
@@ -1436,12 +1449,21 @@ textarea {
     from{
       opacity: 0;
       translate: 0px 100px;
-      scale: 5;
+      scale: 0.8;
     }
 
     to{
       opacity: 1;
       translate: 0px 0px;
       scale: 1;
+    }
+  }
+
+  @keyframes fadeEffect {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
